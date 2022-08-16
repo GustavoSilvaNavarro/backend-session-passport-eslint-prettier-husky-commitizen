@@ -9,8 +9,10 @@ import { fileURLToPath } from 'url';
 import morgan from 'morgan';
 
 import env from './utils/variables-env.js';
+import { connectDB } from './db/dbMDB.js';
 
 const app = express();
+connectDB();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set('port', process.env.PORT || 8080);
