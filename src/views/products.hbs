@@ -1,0 +1,36 @@
+<div class="mainFormContainer">
+  <div class="redirectBottom mb-4">
+    <a href="/" class="btn btn-secondary btn-lg p-2 m-2">Ver productos</a>
+  </div>
+
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="display-5 text-center textColor">Add a Product</h2>
+          <form action="/products" method="post" id="productForm">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" name="nombre" id="floatingInputName" placeholder="Nombre del producto" required />
+              <label for="floatingInputName">Nombre del Producto</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" name="price" id="floatingInputPrice" placeholder="Precio" step="0.01" min="0" required />
+              <label for="floatingInputPrice">Precio</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" name="stock" id="floatingInputStock" placeholder="Stock" min="0" required />
+              <label for="floatingInputStock">Stock</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" name="url" id="floatingInputUrl" placeholder="Image" required />
+              <label for="floatingInputUrl">URL Imagen</label>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-primary btn-lg" id="productsBtn">Add Product</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

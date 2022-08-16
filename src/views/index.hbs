@@ -1,0 +1,49 @@
+<main class="container">
+  <section class="addProductContainer" id="userInteraction">
+    <div class="d-flex align-items-center justify-content-around">
+      <h1 class="display-1 text-center textColor my-3">Hello, <span id="userName">{{ userName }}</span></h1>
+      <a href="/logout" class="btn btn-danger btn-lg">Logout</a>
+    </div>
+
+    <h2 class="display-4 text-center textColor my-3">Lista de Productos</h2>
+    <div class="d-flex justify-content-center mb-5">
+      <a class="btn btn-primary btn-lg" href="/products">Add Product</a>
+    </div>
+
+    {{#if productsArr}}
+      <table class="table table-dark table-hover align-middle" id="productsTable">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Name</th>
+            <th scope="col" class="text-center">Price</th>
+            <th scope="col" class="text-center">Stock</th>
+            <th scope="col" class="text-center">Image</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider" id="tableproductData">
+          {{#each productsArr}}
+            <tr>
+              <th scope="row" class="text-center">{{ name }}</th>
+              <td class="text-center">$ {{ price }}</td>
+              <td class="text-center">{{ stock }}</td>
+              <td class="text-center">
+                <img height="75px" width="120px" src={{ url }} alt={{ name }} />
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      <div class="row justify-content-center mt-5" id="warningProducts">
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="display-5 text-center">Lista vacia</h2>
+              <p class="lead text-center">Aún no hay productos registrados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+  </section>
+</main>
