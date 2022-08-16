@@ -2,9 +2,11 @@
   "name": "63-backend-session-passport-eslint-prettier-husky",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "src/app.js",
   "scripts": {
     "start": "node .",
+    "dev": "start http://localhost:8080 && nodemon .",
     "lint": "eslint src",
     "prepare": "husky install"
   },
@@ -18,11 +20,25 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.19",
     "prettier": "2.7.1"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.5.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
   }
 }
