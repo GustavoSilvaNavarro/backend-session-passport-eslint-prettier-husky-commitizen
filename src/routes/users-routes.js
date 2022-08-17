@@ -1,5 +1,6 @@
 import { Router } from 'express';
 const router = Router();
+import passport from 'passport';
 
 import {
   showMainPage,
@@ -7,10 +8,27 @@ import {
   getUserInfo,
   renderLoginPage,
   getUserInfoToAuthenticate,
+  renderAddProductPage,
+  getProductInfo,
+  renderLogoutPage,
 } from '../controllers/users-controllers.js';
 
+function userIsAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+
+  res.status(301).redirect('/login');
+}
+
 //GET - Show products
-router.get('/', showMainPage);
+router.get('/', userIsAuthenticated, showMainPage);
+
+//GET - Render add products page
+router.get('/products', userIsAuthenticated, renderAddProductPage);
+
+//POST - Get all products from the form
+router.post('/products', userIsAuthenticated, getProductInfo);
 
 //GET - Signup page
 router.get('/signup', renderRegisterPage);
@@ -22,6 +40,13 @@ router.post('/signup', getUserInfo);
 router.get('/login', renderLoginPage);
 
 //POST - login post user info to authenticate
-router.post('/login', getUserInfoToAuthenticate);
+router.post(
+  '/login',
+  passport.authenticate('login', { failureRedirect: '/login' }),
+  getUserInfoToAuthenticate
+);
+
+//GET - Logout and render the page of logout
+router.get('/logout', userIsAuthenticated, renderLogoutPage);
 
 export default router;

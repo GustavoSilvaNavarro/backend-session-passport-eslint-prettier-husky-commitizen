@@ -11,9 +11,11 @@ import morgan from 'morgan';
 
 import env from './utils/variables-env.js';
 import { connectDB } from './db/dbMDB.js';
+import { passportLoginSetupInitialize } from './config/passport-login.js';
 
 const app = express();
 connectDB();
+passportLoginSetupInitialize(passport);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set('port', process.env.PORT || 8080);
@@ -42,7 +44,7 @@ app.use(
     saveUninitialized: false,
     rolling: true,
     cookie: {
-      maxAge: 10000,
+      maxAge: 600000,
     },
   })
 );
@@ -54,18 +56,18 @@ import userRoutes from './routes/users-routes.js';
 app.use('/', userRoutes);
 
 //NON EXISTING ROUTES
-app.use((req, res, next) => {
+app.use(function (req, res, next) {
   const err = new Error('Page Not Found!');
   err.status = 404;
   next(err);
 });
 
 //ERROR HANDLER
-app.use((err, req, res) => {
+app.use(function (err, req, res) {
   res.status(err.status || 500).json({
     error: {
       status: err.status || 500,
-      message: err.message,
+      message: err.status,
     },
   });
 });
