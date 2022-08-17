@@ -42,7 +42,7 @@ app.use(
     saveUninitialized: false,
     rolling: true,
     cookie: {
-      maxAge: 60000,
+      maxAge: 10000,
     },
   })
 );
@@ -52,6 +52,23 @@ app.use(morgan('dev'));
 import userRoutes from './routes/users-routes.js';
 
 app.use('/', userRoutes);
+
+//NON EXISTING ROUTES
+app.use((req, res, next) => {
+  const err = new Error('Page Not Found!');
+  err.status = 404;
+  next(err);
+});
+
+//ERROR HANDLER
+app.use((err, req, res) => {
+  res.status(err.status || 500).json({
+    error: {
+      status: err.status || 500,
+      message: err.message,
+    },
+  });
+});
 
 app.listen(app.get('port'), () => {
   console.log('Server on Port: ', app.get('port'));

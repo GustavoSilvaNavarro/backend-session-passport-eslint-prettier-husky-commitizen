@@ -12,5 +12,4 @@ admin.initializeApp({
 });
 
 export const db = admin.firestore();
-export const Chats = db.collection('chats');
 export const Products = db.collection('products');

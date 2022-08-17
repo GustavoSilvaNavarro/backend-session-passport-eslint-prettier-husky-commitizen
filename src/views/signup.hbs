@@ -1,0 +1,35 @@
+<main>
+  <section class="userInfoContainer" id="userForm">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="display-6 text-center mb-5">Sign up</h2>
+            <form action="/signup" method="post" id="submitFormInfo">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="name" id="floatingInputNameUser" placeholder="User Name" required />
+                <label for="floatingInputNameUser">User Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="email" id="floatingInputEmail" placeholder="Email" required />
+                <label for="floatingInputEmail">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" name="password" id="floatingInputPassword" placeholder="Password" required />
+                <label for="floatingInputPassword">Password</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" name="password_confirm" id="floatingInputConfirmPassword" placeholder="Confirm Password" required />
+                <label for="floatingInputConfirmPassword">Confirm Password</label>
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-primary btn-lg" id="btnFormUser">Send</button>
+              </div>
+            </form>
+            <a href="/login" class="mt-2 text-decoration-none fs-4 d-flex justify-content-end">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
