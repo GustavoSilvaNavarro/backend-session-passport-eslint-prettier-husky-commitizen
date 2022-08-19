@@ -12,6 +12,7 @@ import morgan from 'morgan';
 import env from './utils/variables-env.js';
 import { connectDB } from './db/dbMDB.js';
 import { passportLoginSetupInitialize } from './config/passport-login.js';
+import { PageNotFound } from './utils/user-errors.js';
 
 const app = express();
 connectDB();
@@ -38,13 +39,17 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   session({
-    store: MongoStore.create({ mongoUrl: env.dbName }),
+    store: MongoStore.create({
+      mongoUrl: env.dbName,
+      ttl: 60,
+      autoRemove: 'native',
+    }),
     secret: env.secretKey,
     resave: false,
     saveUninitialized: false,
     rolling: true,
     cookie: {
-      maxAge: 600000,
+      maxAge: 60000,
     },
   })
 );
@@ -56,18 +61,17 @@ import userRoutes from './routes/users-routes.js';
 app.use('/', userRoutes);
 
 //NON EXISTING ROUTES
-app.use(function (req, res, next) {
-  const err = new Error('Page Not Found!');
-  err.status = 404;
+app.use((req, res, next) => {
+  const err = new PageNotFound().setError();
   next(err);
 });
 
 //ERROR HANDLER
-app.use(function (err, req, res) {
+app.use((err, req, res, next) => {
   res.status(err.status || 500).json({
     error: {
       status: err.status || 500,
-      message: err.status,
+      message: err.message,
     },
   });
 });

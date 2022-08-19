@@ -1,5 +1,6 @@
 import { Products } from '../db/dbFBS.js';
 import User from '../models/user-model.js';
+import { UserError } from '../utils/user-errors.js';
 
 //GET - Show products
 export const showMainPage = async (req, res, next) => {
@@ -63,28 +64,30 @@ export const getUserInfo = async (req, res, next) => {
   const { name, email, password, password_confirm } = req.body;
   try {
     if (!name || !email || !password || !password_confirm) {
-      const err = new Error('Please fill up all the fields');
-      err.status = 400;
+      const err = new UserError(
+        'Please fill up all the fields',
+        400
+      ).setError();
       throw err;
     }
 
     if (password !== password_confirm) {
-      const err = new Error('Passwords do not match');
-      err.status = 400;
+      const err = new UserError('Passwords do not match', 400).setError();
       throw err;
     }
 
     if (password.length < 6) {
-      const err = new Error('Password must be at least 6 characters');
-      err.status = 400;
+      const err = new UserError(
+        'Password must be at least 6 characters',
+        400
+      ).setError();
       throw err;
     }
 
     const userRegistered = await User.findOne({ email: email });
 
     if (userRegistered) {
-      const err = new Error('User already registered');
-      err.status = 400;
+      const err = new UserError('User already registered', 400).setError();
       throw err;
     }
 
