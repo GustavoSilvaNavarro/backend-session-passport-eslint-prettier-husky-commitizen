@@ -1,5 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
+import { Server as SocketIo } from 'socket.io';
+import http from 'http';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import passport from 'passport';
@@ -12,9 +14,12 @@ import morgan from 'morgan';
 import env from './utils/variables-env.js';
 import { connectDB } from './db/dbMDB.js';
 import { passportLoginSetupInitialize } from './config/passport-login.js';
+import { socketsEvents } from './sockets/sockets.js';
 import { PageNotFound } from './utils/user-errors.js';
 
 const app = express();
+const server = http.createServer(app);
+const io = new SocketIo(server);
 connectDB();
 passportLoginSetupInitialize(passport);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -76,6 +81,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(app.get('port'), () => {
+//WEB SOCKETS
+socketsEvents(io);
+
+server.listen(app.get('port'), () => {
   console.log('Server on Port: ', app.get('port'));
 });
