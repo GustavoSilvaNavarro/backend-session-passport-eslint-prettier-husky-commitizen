@@ -1,4 +1,8 @@
 import { Chats } from '../db/dbFBS.js';
+import {
+  normalizedData,
+  compressionPercentage,
+} from '../utils/normalization.js';
 
 let chatsArr = [];
 
@@ -15,17 +19,22 @@ export const socketsEvents = (io) => {
           chatsArr.push({ id: chat.id, ...chat.data() });
         });
 
-        io.emit('server:messages', chatsArr);
+        //NORMALIZATION
+        const oldMessToNormalize = normalizedData(chatsArr);
+        const percentage = compressionPercentage(oldMessToNormalize, chatsArr);
+
+        const response = { oldMessToNormalize, percentage };
+
+        io.emit('server:messages', response);
       } else {
-        io.emit('server:messages', chatsArr);
+        //NORMALIZATION
+        const oldMessToNormalize = normalizedData(chatsArr);
+        const percentage = compressionPercentage(oldMessToNormalize, chatsArr);
+
+        const response = { oldMessToNormalize, percentage };
+
+        io.emit('server:messages', response);
       }
-
-      // if (chatsArr.length > 0) {
-      //   const oldDataNormalized = normalizedData(chatsArr);
-      //   const porcentaje = compressionPercentage(oldDataNormalized, chatsArr);
-      //   const resp = { oldDataNormalized, porcentaje};
-
-      // }
     } catch (err) {
       console.log(err.message);
     }
@@ -36,11 +45,12 @@ export const socketsEvents = (io) => {
         const newMess = await Chats.add(mess);
         chatsArr.push({ id: newMess.id, ...mess });
 
-        // const oldDataNormalized = normalizedData(chatsArr);
-        // const porcentaje = compressionPercentage(oldDataNormalized, chatsArr);
-        // const resp = { oldDataNormalized, porcentaje };
+        //NORMALIZATION
+        const oldMessToNormalize = normalizedData(chatsArr);
+        const percentage = compressionPercentage(oldMessToNormalize, chatsArr);
+        const result = { oldMessToNormalize, percentage };
 
-        io.emit('server:messages', chatsArr);
+        io.emit('server:messages', result);
       } catch (err) {
         const error = new Error(err.message);
         console.log(error);
