@@ -27,3 +27,11 @@
 .brown {
   color: brown;
 }
+
+.hideBox {
+  opacity: 0;
+}
+
+.disapearComponent {
+  display: none;
+}

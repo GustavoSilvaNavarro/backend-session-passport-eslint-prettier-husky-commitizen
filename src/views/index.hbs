@@ -1,7 +1,7 @@
 <main class="container">
   <section class="addProductContainer" id="userInteraction">
     <div class="d-flex align-items-center justify-content-around">
-      <h1 class="display-3 text-center textColor my-3">Hello, <span id="userName">{{ userName }} - {{ email }}</span></h1>
+      <h1 class="display-3 text-center textColor my-3">Hello, <span id="userName">{{ userName }}</span> - <span id="userEmail">{{ email }}</span></h1>
       <a href="/logout" class="btn btn-danger btn-lg">Logout</a>
     </div>
 
@@ -45,6 +45,25 @@
         </div>
       </div>
     {{/if}}
+
+    <div class="chatContainer">
+      <h2 class="display-2 text-center textColor my-3">Chat</h2>
+      <h3 class="display-4 text-center my-2">No Chats Available</h3>
+
+      <div class="messageBox hideBox" id="allMessagesContainer">
+        <h4 class="display-6 text-center textColor">(Compresion <span id="compressionNormalized">00</span>%)</h4>
+
+        <div class="messagesContainer" id="chatContainer">
+        </div>
+      </div>
+
+      <div class="formContainer mb-5">
+        <form id="chatForm" class="d-flex align-items-center">
+          <input type="text" class="form-control me-5" placeholder="Message" id="userMessage" required />
+          <button class="btn btn-primary" id="submitBtnMessage">Send</button>
+        </form>
+      </div>
+    </div>
   </section>
 </main>
 

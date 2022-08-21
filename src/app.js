@@ -46,7 +46,7 @@ app.use(
   session({
     store: MongoStore.create({
       mongoUrl: env.dbName,
-      ttl: 60,
+      ttl: 600,
       autoRemove: 'native',
     }),
     secret: env.secretKey,
@@ -54,7 +54,7 @@ app.use(
     saveUninitialized: false,
     rolling: true,
     cookie: {
-      maxAge: 60000,
+      maxAge: 600000,
     },
   })
 );
