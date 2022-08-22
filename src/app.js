@@ -62,8 +62,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(morgan('dev'));
 import userRoutes from './routes/users-routes.js';
+import yargsRoutes from './routes/yargs-routes.js';
 
 app.use('/', userRoutes);
+app.use('/', yargsRoutes);
 
 //NON EXISTING ROUTES
 app.use((req, res, next) => {
