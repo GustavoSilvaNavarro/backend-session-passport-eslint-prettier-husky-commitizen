@@ -32,6 +32,7 @@ passportLoginSetupInitialize(passport);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set('port', process.env.PORT || args.port);
+app.set('json spaces', 2);
 app.set('views', path.join(__dirname, 'views'));
 app.engine(
   '.hbs',

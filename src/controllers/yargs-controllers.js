@@ -1,17 +1,10 @@
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
-
-//YARGS SETUP
-const args = yargs(hideBin(process.argv))
-  .alias({ p: 'port', n: 'name' })
-  .default({ port: 8080, name: 'Antonio' }).argv;
+import { fork } from 'child_process';
 
 //GET INFO OF THE PC WITH YARGS
 export const getInfoFromPC = (req, res, next) => {
   try {
-    const entryArguments = `Port: ${args.port} - Name: ${args.name}`;
     const result = {
-      entryArgs: entryArguments,
+      entryArgs: `${process.argv.slice(2)}`,
       plataform: process.platform,
       nodeVersion: process.version,
       memoryUsage: process.memoryUsage().rss,
@@ -28,7 +21,21 @@ export const getInfoFromPC = (req, res, next) => {
 //COMPUTE RANDOM NUMBERS USING FORK AND PROCESS
 export const computeRandomNumbers = (req, res, next) => {
   try {
-    res.send('Hello World');
+    let amount = req.query.cantidad;
+
+    if (!amount) {
+      amount = 1e8;
+    }
+
+    const forked = fork('src/apis/computeRandomNumbers.js');
+
+    forked.on('message', (result) => {
+      if (result === 'ready') {
+        forked.send(amount);
+      } else {
+        res.status(200).json({ resultado: result });
+      }
+    });
   } catch (err) {
     next(err);
   }
