@@ -1,0 +1,30 @@
+<h1 class="text-center display-4 mt-3">Datos del Proceso</h1>
+<div class="row justify-content-center mt-5">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between">
+          <p class="fs-4 fw-semibold mb-0 text-primary">Argumentos de Entrada:</p><span class="fs-5 fst-italic text-success">{{ result.entryArgs }}</span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+          <p class="fs-4 fw-semibold mb-0 text-primary">Nombre de la Plataforma:</p><span class="fs-5 fst-italic text-success">{{ result.plataform }}</span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+          <p class="fs-4 fw-semibold mb-0 text-primary">Version de NodeJs:</p><span class="fs-5 fst-italic text-success">{{ result.nodeVersion }}</span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+          <p class="fs-4 fw-semibold mb-0 text-primary">Memoria Total Reservada:</p><span class="fs-5 fst-italic text-success">{{ result.memoryUsage }}</span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+          <p class="fs-4 fw-semibold mb-0 text-primary">Path de Ejecucion:</p><span class="fs-5 fst-italic text-success">{{ result.path }}</span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+          <p class="fs-4 fw-semibold mb-0 text-primary">Process ID:</p><span class="fs-5 fst-italic text-success">{{ result.processId }}</span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+          <p class="fs-4 fw-semibold mb-0 text-primary">Carpeta del Proyecto:</p><span class="fs-5 fst-italic text-success">{{ result.dirWorkName }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
