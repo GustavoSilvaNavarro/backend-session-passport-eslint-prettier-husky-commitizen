@@ -12,14 +12,7 @@ import {
   getProductInfo,
   renderLogoutPage,
 } from '../controllers/users-controllers.js';
-
-function userIsAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-
-  res.status(301).redirect('/login');
-}
+import { userIsAuthenticated } from '../middlewares/authentication.js';
 
 //GET - Show products
 router.get('/', userIsAuthenticated, showMainPage);
