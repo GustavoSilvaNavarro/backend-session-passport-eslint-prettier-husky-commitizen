@@ -15,7 +15,6 @@ import morgan from 'morgan';
 import env from '../utils/variables-env.js';
 import { passportLoginSetupInitialize } from '../config/passport-login.js';
 import { socketsEvents } from '../sockets/sockets.js';
-import { PageNotFound } from '../utils/user-errors.js';
 
 //YARGS SETUP
 const args = yargs(hideBin(process.argv))
@@ -68,25 +67,19 @@ app.use(passport.session());
 app.use(morgan('dev'));
 import userRoutes from '../routes/users-routes.js';
 import yargsRoutes from '../routes/yargs-routes.js';
+import {
+  mainErrorHandler,
+  notFoundPageError,
+} from '../middlewares/error-handler.js';
 
 app.use('/', userRoutes);
 app.use('/', yargsRoutes);
 
 //NON EXISTING ROUTES
-app.use((req, res, next) => {
-  const err = new PageNotFound().setError();
-  next(err);
-});
+app.use(notFoundPageError);
 
 //ERROR HANDLER
-app.use((err, req, res, next) => {
-  res.status(err.status || 500).json({
-    error: {
-      status: err.status || 500,
-      message: err.message,
-    },
-  });
-});
+app.use(mainErrorHandler);
 
 //WEB SOCKETS
 socketsEvents(io);
