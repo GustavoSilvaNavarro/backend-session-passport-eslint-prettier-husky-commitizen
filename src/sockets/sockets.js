@@ -40,7 +40,6 @@ export const socketsEvents = (io) => {
     }
 
     socket.on('client:newMessage', async (mess) => {
-      console.log(chatsArr);
       try {
         const newMess = await Chats.add(mess);
         chatsArr.push({ id: newMess.id, ...mess });
