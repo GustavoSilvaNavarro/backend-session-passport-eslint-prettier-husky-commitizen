@@ -27,7 +27,14 @@ router.post('/products', userIsAuthenticated, getProductInfo);
 router.get('/signup', renderRegisterPage);
 
 //POST - Signup page
-router.post('/signup', getUserInfo);
+router.post(
+  '/signup',
+  passport.authenticate('register', {
+    failureRedirect: '/signup',
+    failureFlash: true,
+  }),
+  getUserInfo
+);
 
 //GET - login page
 router.get('/login', renderLoginPage);

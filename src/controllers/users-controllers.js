@@ -1,6 +1,4 @@
 import { Products } from '../db/dbFBS.js';
-import User from '../models/user-model.js';
-import { UserError } from '../utils/user-errors.js';
 
 //GET - Show products
 export const showMainPage = async (req, res, next) => {
@@ -61,39 +59,7 @@ export const renderRegisterPage = (req, res, next) => {
 
 //POST - Signup page
 export const getUserInfo = async (req, res, next) => {
-  const { name, email, password, password_confirm } = req.body;
   try {
-    if (!name || !email || !password || !password_confirm) {
-      const err = new UserError(
-        'Please fill up all the fields',
-        400
-      ).setError();
-      throw err;
-    }
-
-    if (password !== password_confirm) {
-      const err = new UserError('Passwords do not match', 400).setError();
-      throw err;
-    }
-
-    if (password.length < 6) {
-      const err = new UserError(
-        'Password must be at least 6 characters',
-        400
-      ).setError();
-      throw err;
-    }
-
-    const userRegistered = await User.findOne({ email: email });
-
-    if (userRegistered) {
-      const err = new UserError('User already registered', 400).setError();
-      throw err;
-    }
-
-    const newUser = new User({ name, email, password });
-    newUser.password = await newUser.encryptPassword(password);
-    await newUser.save();
     res.status(301).redirect('/login');
   } catch (err) {
     next(err);
@@ -112,7 +78,6 @@ export const renderLoginPage = (req, res, next) => {
 //POST - Login authentication of my user
 export const getUserInfoToAuthenticate = (req, res, next) => {
   try {
-    req.session.userEmail = req.user.email;
     res.status(200).redirect('/');
   } catch (err) {
     next(err);
