@@ -8,6 +8,7 @@ import session from 'express-session';
 import passport from 'passport';
 import MongoStore from 'connect-mongo';
 import { engine } from 'express-handlebars';
+import flash from 'connect-flash';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import morgan from 'morgan';
@@ -64,13 +65,18 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 app.use(morgan('dev'));
 import userRoutes from '../routes/users-routes.js';
 import yargsRoutes from '../routes/yargs-routes.js';
 import {
   mainErrorHandler,
   notFoundPageError,
+  globalVariables,
 } from '../middlewares/error-handler.js';
+
+//GLOBAL VARIABLES
+app.use(globalVariables);
 
 app.use('/', userRoutes);
 app.use('/', yargsRoutes);

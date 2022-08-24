@@ -35,7 +35,10 @@ router.get('/login', renderLoginPage);
 //POST - login post user info to authenticate
 router.post(
   '/login',
-  passport.authenticate('login', { failureRedirect: '/login' }),
+  passport.authenticate('login', {
+    failureRedirect: '/login',
+    failureFlash: true,
+  }),
   getUserInfoToAuthenticate
 );
 
