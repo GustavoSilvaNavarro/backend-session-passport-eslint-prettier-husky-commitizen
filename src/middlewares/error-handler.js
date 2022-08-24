@@ -12,10 +12,11 @@ export const notFoundPageError = (req, res, next) => {
 };
 
 export const mainErrorHandler = (err, req, res, next) => {
-  res.status(err.status || 500).json({
-    error: {
-      status: err.status || 500,
-      message: err.message,
-    },
-  });
+  // res.status(err.status || 500).json({
+  //   error: {
+  //     status: err.status || 500,
+  //     message: err.message,
+  //   },
+  // });
+  res.status(err.status || 500).render('pageNotFound', { error: err.message });
 };
