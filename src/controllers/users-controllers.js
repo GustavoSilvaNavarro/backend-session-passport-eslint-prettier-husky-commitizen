@@ -112,6 +112,7 @@ export const renderLoginPage = (req, res, next) => {
 //POST - Login authentication of my user
 export const getUserInfoToAuthenticate = (req, res, next) => {
   try {
+    req.session.userEmail = req.user.email;
     res.status(200).redirect('/');
   } catch (err) {
     next(err);
