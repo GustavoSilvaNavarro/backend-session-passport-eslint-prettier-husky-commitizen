@@ -6,8 +6,9 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node .",
-    "dev": "start http://localhost:8080 && nodemon .",
-    "developer": "nodemon . -p 3000 -n Gustavo",
+    "start:dev": "start http://localhost:8080 && nodemon .",
+    "start:dev-args": "nodemon . -p 3000 -n Gustavo -m cluster",
+    "start:forever": "forever start -w .",
     "lint": "eslint src",
     "prepare": "husky install"
   },
@@ -20,6 +21,7 @@
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "forever": "^4.0.3",
     "husky": "^8.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.19",

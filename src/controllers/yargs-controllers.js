@@ -1,4 +1,5 @@
 import { fork } from 'child_process';
+import os from 'os';
 
 //GET INFO OF THE PC WITH YARGS
 export const getInfoFromPC = (req, res, next) => {
@@ -11,6 +12,7 @@ export const getInfoFromPC = (req, res, next) => {
       path: process.execPath,
       processId: process.pid,
       dirWorkName: process.cwd(),
+      workers: os.cpus().length,
     };
     res.status(200).render('info', { result });
   } catch (err) {
