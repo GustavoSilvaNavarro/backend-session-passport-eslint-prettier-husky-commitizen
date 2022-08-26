@@ -97,5 +97,45 @@ taskkill <pid>
 ```
 
 ## PM2
+- Se inicia el servidor en modo fork con el siguiente comando:
+```
+"start:pm2": "pm2 start src/app.js --watch",
+```
+- Para ver los procesos activos, por sistema operativo utilizo el comando:
+```
+tasklist/fi "imagename eq node.exe"
+```
+* Se obtiene lo siguiente:
+
+![image](https://user-images.githubusercontent.com/66889974/186935503-d682f5d7-9aa9-484f-954e-e3bf0a60b8e8.png)
+
+- Para ver los procesos activos, por **PM2 Command** utilizo el comando:
+```
+pm2 list
+```
+* Se obtiene lo siguiente:
+
+![image](https://user-images.githubusercontent.com/66889974/186935940-08abb3e4-d57f-4fea-86be-9f0178031524.png)
+
+- Se inicia el servidor en modo cluster con el siguiente comando:
+```
+"start:pm2": "pm2 start src/app.js --watch -i max",
+```
+- Para ver los procesos activos, por sistema operativo utilizo el comando:
+```
+tasklist/fi "imagename eq node.exe"
+```
+* Se obtiene lo siguiente:
+
+![image](https://user-images.githubusercontent.com/66889974/186936784-32e56a1d-1dad-4f27-9e14-326a3fbd0217.png)
+
+- Para ver los procesos activos, por **PM2 Command** utilizo el comando:
+```
+pm2 list
+```
+* Se obtiene lo siguiente:
+
+![image](https://user-images.githubusercontent.com/66889974/186936675-0cd2189b-d04b-48e0-a410-fec590e9d01c.png)
+
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
