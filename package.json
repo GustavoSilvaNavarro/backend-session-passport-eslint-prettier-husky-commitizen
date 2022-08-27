@@ -9,7 +9,8 @@
     "start:dev": "start http://localhost:8080 && nodemon .",
     "start:dev-args": "nodemon . -p 3000 -n Gustavo -m cluster",
     "start:forever": "forever start -w .",
-    "start:pm2": "pm2 start src/app.js --watch -i max",
+    "start:pm2-cluster": "pm2 start src/app.js -f --watch -- -- 8081 cluster",
+    "start:pms2-fork": "pm2 start src/app.js -f --watch -- -- 8080 fork",
     "lint": "eslint src",
     "prepare": "husky install"
   },
