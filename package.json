@@ -1,16 +1,16 @@
 {
   "name": "63-backend-session-passport-eslint-prettier-husky",
   "version": "1.0.0",
-  "description": "",
+  "description": "Recordar que en los scripts para pm2 no va . ya que no funciona hay que escribir el src/app.js y no va doble -- -- solo uno --",
   "type": "module",
   "main": "src/app.js",
   "scripts": {
     "start": "node .",
     "start:dev": "start http://localhost:8080 && nodemon .",
-    "start:dev-args": "nodemon . -p 3000 -n Gustavo -m cluster",
-    "start:forever": "forever start -w .",
-    "start:pm2-cluster": "pm2 start src/app.js -f --watch -- -- 8081 cluster",
-    "start:pms2-fork": "pm2 start src/app.js -f --watch -- -- 8080 fork",
+    "start:dev-args": "nodemon . -p 3000 -n Christa -m cluster",
+    "start:forever": "forever start -w . -p 3000 -m cluster -n Christa",
+    "start:pm2-cluster": "pm2 start src/app.js -f --watch -- -- -p 8081 -m cluster",
+    "start:pm2-fork": "pm2 start src/app.js -f --watch -- -- -p 3000 -m fork -n Christa",
     "lint": "eslint src",
     "prepare": "husky install"
   },

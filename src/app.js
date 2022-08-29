@@ -1,13 +1,13 @@
 import 'dotenv/config';
-// import yargs from 'yargs';
-// import { hideBin } from 'yargs/helpers';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 import cluster from 'cluster';
 import os from 'os';
 
 //YARGS SETUP
-// const args = yargs(hideBin(process.argv))
-//   .alias({ m: 'mode' })
-//   .default({ mode: 'fork' }).argv;
+const args = yargs(hideBin(process.argv))
+  .alias({ m: 'mode' })
+  .default({ mode: 'fork' }).argv;
 
 import connectionToServer from './server/server.js';
 import { connectDB } from './db/dbMDB.js';
@@ -17,7 +17,7 @@ const cpus = os.cpus();
 const { server, app } = connectionToServer;
 connectDB();
 
-if (process.argv[3] === 'cluster' && cluster.isPrimary) {
+if (args.mode === 'cluster' && cluster.isPrimary) {
   // if it is not the main process creates workers
   cpus.map(() => {
     cluster.fork();
