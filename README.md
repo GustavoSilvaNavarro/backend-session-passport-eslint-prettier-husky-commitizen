@@ -141,11 +141,11 @@ pm2 list
 1. Mirar configuracion de archivo **app.js**
 2. Escribir el siguiente comando:
 ```
-pm2 start src/app.js --watch -- -- 8081 cluster
+pm2 start src/app.js --watch -- -- -p 8081 -m cluster
 ```
 3. Para no tener que copiar otro archivo y hacer que mi servidor corra en modo fork, escribo:
 ```
-pm2 start src/app.js -f --watch -- -- 8080 fork
+pm2 start src/app.js -f --watch -- -- -p 8080 -m fork
 ```
 4. Para redirigir solo la consulta a ruta **/api/randoms** al puerto **8081** que esta en modo **CLUSTER**, y el resto de mis rutas al puerto unico **8080** que esta en modo **FORK**, el archivo de configuracion de NGINX sera de la siguiente manera:
 ## NGINX FILE
@@ -214,14 +214,14 @@ http {
 1. Mirar configuracion de archivo **app.js**
 2. Escribir el siguiente comando:
 ```
-pm2 start src/app.js --watch -- -- 8080 fork
+pm2 start src/app.js --watch -- -- -p 8080 -m fork
 ```
 3. Para no tener que copiar otro archivo y hacer que mi servidor corra en modo fork, escribo los siguiente comando con los puertos que gestionara **NGINX**:
 ```
-pm2 start src/app.js -f --watch -- -- 8082 fork
-pm2 start src/app.js -f --watch -- -- 8083 fork
-pm2 start src/app.js -f --watch -- -- 8084 fork
-pm2 start src/app.js -f --watch -- -- 8085 fork
+pm2 start src/app.js -f --watch -- -- -p 8082 -m fork
+pm2 start src/app.js -f --watch -- -- -p 8083 -m fork
+pm2 start src/app.js -f --watch -- -- -p 8084 -m fork
+pm2 start src/app.js -f --watch -- -- -p 8085 -m fork
 ```
 4. Para redirigir solo la consulta a ruta **/api/randoms** al puerto **8082, 8083, 8084, 8085** que estara en modo **CLUSTER pero manejado por NGINX**, y el resto de mis rutas al puerto unico **8080** que esta en modo **FORK**, el archivo de configuracion de NGINX sera de la siguiente manera:
 
