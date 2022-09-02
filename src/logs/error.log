@@ -1,0 +1,15 @@
+[14:45:51.615] [31mERROR[39m (17968): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
+[14:47:55.932] [31mERROR[39m (20512): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
+[14:48:29.534] [31mERROR[39m (23788): [36mDB is connected to firsttry-shard-00-01.dpuwp.mongodb.net[39m
+[14:48:53.541] [31mERROR[39m (24064): [36mDB is connected to firsttry-shard-00-01.dpuwp.mongodb.net[39m
+[14:49:50.618] [31mERROR[39m (26384): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
+[14:50:35.138] [31mERROR[39m (14048): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
+[14:51:33.245] [31mERROR[39m (23784): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
+[14:51:56.096] [31mERROR[39m (20760): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
+{"level":50,"time":1662141991080,"pid":28140,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-01.dpuwp.mongodb.net"}
+{"level":50,"time":1662142048499,"pid":6200,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-01.dpuwp.mongodb.net"}
+{"level":50,"time":1662142081975,"pid":6696,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-00.dpuwp.mongodb.net"}
+{"level":50,"time":1662142112869,"pid":17692,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-00.dpuwp.mongodb.net"}
+{"level":50,"time":1662142127360,"pid":17576,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-00.dpuwp.mongodb.net"}
+{"level":50,"time":1662142145934,"pid":29344,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-02.dpuwp.mongodb.net"}
+{"level":50,"time":1662143042202,"pid":16096,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-01.dpuwp.mongodb.net"}
