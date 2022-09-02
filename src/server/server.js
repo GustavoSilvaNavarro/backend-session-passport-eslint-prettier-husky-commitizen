@@ -1,4 +1,5 @@
 import express from 'express';
+import compression from 'compression';
 import { Server as SocketIo } from 'socket.io';
 import http from 'http';
 import yargs from 'yargs';
@@ -46,6 +47,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(compression());
 app.use(cookieParser());
 app.use(
   session({

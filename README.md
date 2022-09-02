@@ -291,4 +291,16 @@ http {
 }
 ```
 
+## COMPRESSION USING GZIP
+1. This package is pretty useful to compress the responses to the client using less bytes.
+2. Example of the total memory used for the computer
+![image](https://user-images.githubusercontent.com/66889974/188130759-cc595b47-eed3-4609-860a-3ef29613df1b.png)
+3. Luego aplicaremos la compresion a todas nuestras respuestas con el middleware:
+```
+app.use(compression());
+```
+![image](https://user-images.githubusercontent.com/66889974/188130291-e8a0a6df-0bc9-45b7-b0b2-1e8cb83205bf.png)
+
+Se ve la diferencia notable entre ambas respuestas debido a la diferencia entre 3.6 Kb y 1.7Kb para la version comprimida
+
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
