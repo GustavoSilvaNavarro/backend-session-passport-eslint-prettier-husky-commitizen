@@ -7,7 +7,7 @@ import { UserError } from '../utils/user-errors.js';
 export const getInfoFromPC = (req, res, next) => {
   try {
     const result = {
-      entryArgs: `${process.argv.slice(2)}`,
+      entryArgs: `[${process.argv.slice(2)}]`,
       plataform: process.platform,
       nodeVersion: process.version,
       memoryUsage: process.memoryUsage().rss,

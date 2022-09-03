@@ -1,14 +1,9 @@
 import 'dotenv/config';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
 import cluster from 'cluster';
 import os from 'os';
 
+import { args } from './utils/yargs.js';
 import logger from './utils/loggers.js';
-
-//YARGS SETUP
-const args = yargs(hideBin(process.argv)).alias({ m: 'mode' }).default({ mode: 'fork' }).argv;
-
 import connectionToServer from './server/server.js';
 import { connectDB } from './db/dbMDB.js';
 

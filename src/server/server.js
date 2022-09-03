@@ -2,8 +2,6 @@ import express from 'express';
 import compression from 'compression';
 import { Server as SocketIo } from 'socket.io';
 import http from 'http';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import passport from 'passport';
@@ -15,11 +13,9 @@ import { fileURLToPath } from 'url';
 import morgan from 'morgan';
 
 import env from '../utils/variables-env.js';
+import { args } from '../utils/yargs.js';
 import { passportLoginSetupInitialize } from '../config/passport-login.js';
 import { socketsEvents } from '../sockets/sockets.js';
-
-//YARGS SETUP
-const args = yargs(hideBin(process.argv)).alias({ p: 'port', n: 'name' }).default({ port: 8080, name: 'Antonio' }).argv;
 
 const app = express();
 const server = http.createServer(app);
