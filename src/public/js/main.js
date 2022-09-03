@@ -3,21 +3,9 @@
 const socket = io('/');
 
 //SCHEMAS
-const authorSchema = new normalizr.schema.Entity(
-  'author',
-  {},
-  { idAttribute: 'email' }
-);
-const mensajeSchema = new normalizr.schema.Entity(
-  'mensaje',
-  { author: authorSchema },
-  { idAttribute: 'id' }
-);
-const schemaMensajes = new normalizr.schema.Entity(
-  'mensajes',
-  { mensajes: [mensajeSchema] },
-  { idAttribute: 'id' }
-);
+const authorSchema = new normalizr.schema.Entity('author', {}, { idAttribute: 'email' });
+const mensajeSchema = new normalizr.schema.Entity('mensaje', { author: authorSchema }, { idAttribute: 'id' });
+const schemaMensajes = new normalizr.schema.Entity('mensajes', { mensajes: [mensajeSchema] }, { idAttribute: 'id' });
 
 //GLOBAL VARIABLES
 const chatForm = document.querySelector('#chatForm');

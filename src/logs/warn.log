@@ -1,29 +1,10 @@
-[14:45:47.959] [33mWARN[39m (17968): [36mServer on Port: 8080 - Worker: 17968[39m
-[14:45:51.615] [31mERROR[39m (17968): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
-[14:47:52.319] (20512): [36mServer on Port: 8080 - Worker: 20512[39m
-[14:47:55.932] (20512): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
-[14:48:26.014] (23788): [36mServer on Port: 8080 - Worker: 23788[39m
-[14:48:29.534] (23788): [36mDB is connected to firsttry-shard-00-01.dpuwp.mongodb.net[39m
-[14:48:50.020] [33mWARN[39m (24064): [36mServer on Port: 8080 - Worker: 24064[39m
-[14:48:53.541] [31mERROR[39m (24064): [36mDB is connected to firsttry-shard-00-01.dpuwp.mongodb.net[39m
-[14:49:47.052] [33mWARN[39m (26384): [36mServer on Port: 8080 - Worker: 26384[39m
-[14:49:50.618] [31mERROR[39m (26384): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
-[14:50:35.138] [31mERROR[39m (14048): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
-[14:51:29.708] [33mWARN[39m (23784): [36mServer on Port: 8080 - Worker: 23784[39m
-[14:51:33.245] [31mERROR[39m (23784): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
-[14:51:52.632] [33mWARN[39m (20760): [36mServer on Port: 8080 - Worker: 20760[39m
-[14:51:56.096] [31mERROR[39m (20760): [36mDB is connected to firsttry-shard-00-02.dpuwp.mongodb.net[39m
-{"level":40,"time":1662141987544,"pid":28140,"hostname":"GustavoSilva","msg":"Server on Port: 8080 - Worker: 28140"}
-{"level":50,"time":1662141991080,"pid":28140,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-01.dpuwp.mongodb.net"}
-{"level":40,"time":1662142045060,"pid":6200,"hostname":"GustavoSilva","msg":"Server on Port: 8080 - Worker: 6200"}
-{"level":50,"time":1662142048499,"pid":6200,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-01.dpuwp.mongodb.net"}
-{"level":40,"time":1662142078445,"pid":6696,"hostname":"GustavoSilva","msg":"Server on Port: 8080 - Worker: 6696"}
-{"level":50,"time":1662142081975,"pid":6696,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-00.dpuwp.mongodb.net"}
-{"level":40,"time":1662142109317,"pid":17692,"hostname":"GustavoSilva","msg":"Server on Port: 8080 - Worker: 17692"}
-{"level":50,"time":1662142112869,"pid":17692,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-00.dpuwp.mongodb.net"}
-{"level":40,"time":1662142123893,"pid":17576,"hostname":"GustavoSilva","msg":"Server on Port: 8080 - Worker: 17576"}
-{"level":50,"time":1662142127360,"pid":17576,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-00.dpuwp.mongodb.net"}
-{"level":40,"time":1662142142461,"pid":29344,"hostname":"GustavoSilva","msg":"Server on Port: 8080 - Worker: 29344"}
-{"level":50,"time":1662142145934,"pid":29344,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-02.dpuwp.mongodb.net"}
-{"level":40,"time":1662143038570,"pid":16096,"hostname":"GustavoSilva","msg":"Server on Port: 8080 - Worker: 16096"}
-{"level":50,"time":1662143042202,"pid":16096,"hostname":"GustavoSilva","msg":"DB is connected to firsttry-shard-00-01.dpuwp.mongodb.net"}
+WARN [2022-09-03 09:00:29] (21528): Page Not Found!
+ERROR [2022-09-03 09:01:30] (21528): Plese insert a number or leave it blank
+WARN [2022-09-03 09:01:31] (21528): Page Not Found!
+ERROR [2022-09-03 09:03:01] (11640): Plese insert a number or leave it blank
+WARN [2022-09-03 09:03:04] (11640): Page Not Found!
+WARN [2022-09-03 09:03:28] (10164): Page Not Found!
+ERROR [2022-09-03 09:03:40] (10164): Plese insert a number or leave it blank
+WARN [2022-09-03 09:03:43] (10164): Page Not Found!
+WARN [2022-09-03 09:19:52] (20472): Page Not Found!
+WARN [2022-09-03 09:20:18] (14892): Page Not Found!

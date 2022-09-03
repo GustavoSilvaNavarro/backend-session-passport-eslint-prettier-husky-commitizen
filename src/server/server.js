@@ -19,9 +19,7 @@ import { passportLoginSetupInitialize } from '../config/passport-login.js';
 import { socketsEvents } from '../sockets/sockets.js';
 
 //YARGS SETUP
-const args = yargs(hideBin(process.argv))
-  .alias({ p: 'port', n: 'name' })
-  .default({ port: 8080, name: 'Antonio' }).argv;
+const args = yargs(hideBin(process.argv)).alias({ p: 'port', n: 'name' }).default({ port: 8080, name: 'Antonio' }).argv;
 
 const app = express();
 const server = http.createServer(app);
@@ -71,11 +69,7 @@ app.use(flash());
 app.use(morgan('dev'));
 import userRoutes from '../routes/users-routes.js';
 import yargsRoutes from '../routes/yargs-routes.js';
-import {
-  mainErrorHandler,
-  notFoundPageError,
-  globalVariables,
-} from '../middlewares/error-handler.js';
+import { mainErrorHandler, notFoundPageError, globalVariables } from '../middlewares/error-handler.js';
 
 //GLOBAL VARIABLES
 app.use(globalVariables);
@@ -84,7 +78,7 @@ app.use('/', userRoutes);
 app.use('/', yargsRoutes);
 
 //NON EXISTING ROUTES
-app.use(notFoundPageError);
+app.use('*', notFoundPageError);
 
 //ERROR HANDLER
 app.use(mainErrorHandler);

@@ -1,4 +1,5 @@
 import { PageNotFound } from '../utils/user-errors.js';
+import logger from '../utils/loggers.js';
 
 //GLOBAL VARIABLES
 export const globalVariables = (req, res, next) => {
@@ -8,6 +9,7 @@ export const globalVariables = (req, res, next) => {
 
 export const notFoundPageError = (req, res, next) => {
   const err = new PageNotFound().setError();
+  logger.warn(err.message);
   next(err);
 };
 

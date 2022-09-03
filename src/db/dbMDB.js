@@ -7,10 +7,10 @@ export const connectDB = async () => {
   try {
     const db = await mongoose.connect(env.dbNameUsers);
 
-    logger.error(`DB is connected to ${db.connection.host}`);
+    logger.info(`DB is connected to ${db.connection.host}`);
   } catch (err) {
-    console.log('Error detected');
-    console.log(err.message);
+    logger.error('Error linking the Data Base');
+    logger.error(err.message);
     process.exit(1);
   }
 };

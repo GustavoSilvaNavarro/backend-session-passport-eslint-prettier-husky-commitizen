@@ -1,10 +1,7 @@
 import { Router } from 'express';
 const router = Router();
 
-import {
-  getInfoFromPC,
-  computeRandomNumbers,
-} from '../controllers/yargs-controllers.js';
+import { getInfoFromPC, computeRandomNumbers } from '../controllers/yargs-controllers.js';
 
 //GET INFO OF THE PC WITH YARGS
 router.get('/info', getInfoFromPC);

@@ -1,15 +1,13 @@
 import { Chats } from '../db/dbFBS.js';
-import {
-  normalizedData,
-  compressionPercentage,
-} from '../utils/normalization.js';
+import { normalizedData, compressionPercentage } from '../utils/normalization.js';
+import logger from '../utils/loggers.js';
 
 let chatsArr = [];
 
 //WEB SOCKETS EVENTS
 export const socketsEvents = (io) => {
   io.on('connection', async (socket) => {
-    console.log(socket.id);
+    logger.info(`Client: ${socket.id}`);
 
     try {
       if (chatsArr.length <= 0) {
@@ -36,7 +34,7 @@ export const socketsEvents = (io) => {
         io.emit('server:messages', response);
       }
     } catch (err) {
-      console.log(err.message);
+      logger.error(err.message);
     }
 
     socket.on('client:newMessage', async (mess) => {
@@ -51,8 +49,7 @@ export const socketsEvents = (io) => {
 
         io.emit('server:messages', result);
       } catch (err) {
-        const error = new Error(err.message);
-        console.log(error);
+        logger.error(err.message);
       }
     });
   });

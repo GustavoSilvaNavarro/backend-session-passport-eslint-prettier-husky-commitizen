@@ -16,7 +16,8 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error", {
-      "singleQuote": true
+      "singleQuote": true,
+      "printWidth": 120
     }],
     "no-unused-vars":"off", //to avoid the porblem when i use next on my error handler
     "no-undef":"off" //to avoid the not defined problem using socket io in client side on my main.js

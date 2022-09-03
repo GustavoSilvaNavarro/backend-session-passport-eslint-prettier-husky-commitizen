@@ -8,26 +8,11 @@ export function print(obj) {
 
 export const normalizedData = (dataArr) => {
   //SCHEMAS
-  const authorSchema = new schema.Entity(
-    'author',
-    {},
-    { idAttribute: 'email' }
-  );
-  const mensajeSchema = new schema.Entity(
-    'mensaje',
-    { author: authorSchema },
-    { idAttribute: 'id' }
-  );
-  const schemaMensajes = new schema.Entity(
-    'mensajes',
-    { mensajes: [mensajeSchema] },
-    { idAttribute: 'id' }
-  );
+  const authorSchema = new schema.Entity('author', {}, { idAttribute: 'email' });
+  const mensajeSchema = new schema.Entity('mensaje', { author: authorSchema }, { idAttribute: 'id' });
+  const schemaMensajes = new schema.Entity('mensajes', { mensajes: [mensajeSchema] }, { idAttribute: 'id' });
 
-  const normalizedChats = normalize(
-    { id: 'mensajes', mensajes: dataArr },
-    schemaMensajes
-  );
+  const normalizedChats = normalize({ id: 'mensajes', mensajes: dataArr }, schemaMensajes);
 
   return normalizedChats;
 };
