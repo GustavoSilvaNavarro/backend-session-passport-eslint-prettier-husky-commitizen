@@ -6,6 +6,9 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node .",
+    "start:0xtest": "0x src/app.js",
+    "test": "npm run setup && node src/utils/autocannon.js",
+    "setup": "curl -X GET http://localhost:8080/info",
     "start:dev": "start http://localhost:8080 && nodemon .",
     "start:dev-args": "nodemon . -p 3000 -n Christa -m cluster",
     "start:forever": "forever start -w . -p 3000 -m cluster -n Christa",
@@ -18,6 +21,7 @@
   "author": "Gustavo Silva",
   "license": "ISC",
   "devDependencies": {
+    "autocannon": "^7.9.0",
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.22.0",

@@ -1,0 +1,214 @@
+Statistical profiling result from no_clg_fork_v8.log, (19364 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+  18949   97.9%          C:\Windows\SYSTEM32\ntdll.dll
+    364    1.9%          C:\Program Files\nodejs\node.exe
+     10    0.1%          C:\Windows\System32\KERNELBASE.dll
+      7    0.0%          C:\Windows\System32\KERNEL32.DLL
+      1    0.0%          C:\Windows\system32\mswsock.dll
+      1    0.0%          C:\Windows\System32\WS2_32.dll
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      4    0.0%   12.5%  LazyCompile: *parse E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:269:30
+      3    0.0%    9.4%  LazyCompile: *resolve node:path:158:10
+      2    0.0%    6.3%  RegExp: (?:\r\n?|\n).*
+      1    0.0%    3.1%  RegExp: ^text\/|^application\/(javascript|json)
+      1    0.0%    3.1%  RegExp: ^(?:as\s+\|)
+      1    0.0%    3.1%  RegExp: ^(?:\{\{(~)?\^)
+      1    0.0%    3.1%  RegExp: ^(?:[^\x00]*?(?=(\{\{)))
+      1    0.0%    3.1%  RegExp: \r?\n?
+      1    0.0%    3.1%  LazyCompile: *wrap E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\handlebars\dist\cjs\handlebars\compiler\code-gen.js:101:22
+      1    0.0%    3.1%  LazyCompile: *validateNumber node:internal/validators:117:24
+      1    0.0%    3.1%  LazyCompile: *processTicksAndRejections node:internal/process/task_queues:67:35
+      1    0.0%    3.1%  LazyCompile: *next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:478:32
+      1    0.0%    3.1%  LazyCompile: *next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:177:16
+      1    0.0%    3.1%  LazyCompile: *deserializeObject E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\bson\lib\parser\deserializer.js:65:27
+      1    0.0%    3.1%  LazyCompile: *anonymous E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:12:42
+      1    0.0%    3.1%  LazyCompile: *<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express-handlebars\dist\express-handlebars.js:251:47
+      1    0.0%    3.1%  Function: ^writetop E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express-session\index.js:270:24
+      1    0.0%    3.1%  Function: ^write E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\cmap\connection.js:384:15
+      1    0.0%    3.1%  Function: ^toNamespacedPath node:path:618:19
+      1    0.0%    3.1%  Function: ^processWaitQueue E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\sdam\topology.js:535:26
+      1    0.0%    3.1%  Function: ^processTimers node:internal/timers:492:25
+      1    0.0%    3.1%  Function: ^parse E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\cmap\commands.js:426:10
+      1    0.0%    3.1%  Function: ^getReadPreference E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\cmap\wire_protocol\shared.js:8:27
+      1    0.0%    3.1%  Function: ^ConnectionCheckedInEvent E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\cmap\connection_pool_events.js:128:16
+      1    0.0%    3.1%  Function: ^<anonymous> node:internal/fs/utils:683:42
+      1    0.0%    3.1%  Function: ^<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\source-map\lib\source-node.js:174:29
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+     32    0.2%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+     14    0.1%   43.8%  GC
+  19332   99.8%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  18949   97.9%  C:\Windows\SYSTEM32\ntdll.dll
+
+    364    1.9%  C:\Program Files\nodejs\node.exe
+    170   46.7%    C:\Program Files\nodejs\node.exe
+     22   12.9%      Function: ^compileFunction node:vm:309:25
+     22  100.0%        Function: ^wrapSafe node:internal/modules/cjs/loader:1024:18
+     22  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1066:37
+     22  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1121:37
+     13    7.6%      Function: ^stat node:internal/modules/cjs/loader:151:14
+      9   69.2%        Function: ^Module._findPath node:internal/modules/cjs/loader:500:28
+      8   88.9%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:860:35
+      8  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:766:24
+      1   11.1%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:860:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:766:24
+      4   30.8%        Function: ^tryFile node:internal/modules/cjs/loader:390:17
+      3   75.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:406:23
+      3  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:500:28
+      1   25.0%          LazyCompile: *Module._findPath node:internal/modules/cjs/loader:500:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:860:35
+      8    4.7%      Function: ^statSync node:fs:1588:18
+      7   87.5%        Function: ^tryStat E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\view.js:174:17
+      7  100.0%          Function: ^resolve E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\view.js:146:42
+      7  100.0%            Function: ^lookup E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\view.js:104:40
+      1   12.5%        Function: ^tryStatSync node:internal/modules/esm/resolve:165:3
+      1  100.0%          Function: ^finalizeResolution node:internal/modules/esm/resolve:372:28
+      1  100.0%            Function: ^moduleResolve node:internal/modules/esm/resolve:944:23
+      7    4.1%      Function: ^handleWriteReq node:internal/stream_base_commons:45:24
+      7  100.0%        Function: ^writeGeneric node:internal/stream_base_commons:147:22
+      7  100.0%          Function: ^Socket._writeGeneric node:net:837:42
+      7  100.0%            Function: ^Socket._write node:net:874:35
+      7    4.1%      C:\Program Files\nodejs\node.exe
+      4   57.1%        Function: ^fromString E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\utils.js:370:22
+      4  100.0%          Function: ^ns E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\utils.js:348:12
+      4  100.0%            Function: ^measureRoundTripTime E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\sdam\monitor.js:287:30
+      1   14.3%        LazyCompile: *PathExpression E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:289:42
+      1  100.0%          LazyCompile: *accept E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:101:26
+      1  100.0%            Function: ^simpleSexpr E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:264:36
+      1   14.3%        Function: ~<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\send\node_modules\debug\src\node.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1066:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1121:37
+      1   14.3%        Function: ^parseAcceptEncoding E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\negotiator\lib\encoding.js:31:29
+      1  100.0%          Function: ^preferredEncodings E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\negotiator\lib\encoding.js:138:28
+      1  100.0%            Function: ^encodings E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\negotiator\index.js:52:52
+      6    3.5%      Function: ^writevGeneric node:internal/stream_base_commons:122:23
+      6  100.0%        Function: ^Socket._writeGeneric node:net:837:42
+      6  100.0%          Function: ^Socket._writev node:net:869:36
+      6  100.0%            Function: ^doWrite node:internal/streams/writable:401:17
+      6    3.5%      Function: ^realpathSync node:fs:2474:22
+      6  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:399:20
+      6  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:390:17
+      6  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:406:23
+      5    2.9%      Function: ^openSync node:fs:590:18
+      4   80.0%        Function: ^readFileSync node:fs:464:22
+      2   50.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1121:37
+      1   50.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:976:33
+      1   50.0%            Function: ^Module.load node:internal/modules/cjs/loader:976:33
+      2   50.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1121:37
+      2  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:976:33
+      1   20.0%        LazyCompile: ~readFileSync node:fs:464:22
+      1  100.0%          LazyCompile: ~cjsPreparseModuleExports node:internal/modules/esm/translators:194:34
+      1  100.0%            Function: ^commonjsStrategy node:internal/modules/esm/translators:148:60
+      3    1.8%      LazyCompile: *nextTick node:internal/process/task_queues:103:18
+      1   33.3%        Function: ^write_ node:_http_outgoing:790:16
+      1  100.0%          Function: ^write node:_http_outgoing:761:49
+      1  100.0%            Function: ^write E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\compression\index.js:78:32
+      1   33.3%        Function: ^resOnFinish node:_http_server:836:21
+      1  100.0%          LazyCompile: *emit node:events:484:44
+      1  100.0%            Function: ^onFinish node:_http_outgoing:907:18
+      1   33.3%        Function: ^onwrite node:internal/streams/writable:428:17
+      1  100.0%          Function: ^processIncomingData E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\cmap\message_stream.js:84:29
+      1  100.0%            Function: ^_write E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\cmap\message_stream.js:31:11
+      3    1.8%      LazyCompile: *deserializeObject E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\bson\lib\parser\deserializer.js:65:27
+      2   66.7%        Function: ^deserialize E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\bson\lib\parser\deserializer.js:36:21
+      2  100.0%          Function: ^deserialize E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\bson\lib\bson.js:175:21
+      2  100.0%            Function: ^parse E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\cmap\commands.js:426:10
+      1   33.3%        LazyCompile: *deserializeObject E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\bson\lib\parser\deserializer.js:65:27
+      1  100.0%          Function: ^deserialize E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\bson\lib\parser\deserializer.js:36:21
+      1  100.0%            Function: ^deserialize E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\bson\lib\bson.js:175:21
+      3    1.8%      Function: ^initialize E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\passport\lib\middleware\initialize.js:51:29
+      3  100.0%        LazyCompile: *trim_prefix E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:293:23
+      3  100.0%          LazyCompile: *next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:177:16
+      3  100.0%            Function: ^<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express-session\index.js:485:38
+      3    1.8%      Function: ^hash E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express-session\index.js:596:14
+      2   66.7%        Function: ^isSaved E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express-session\index.js:430:21
+      2  100.0%          Function: ^shouldSave E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express-session\index.js:440:24
+      2  100.0%            Function: ^end E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express-session\index.js:250:27
+      1   33.3%        Function: ^inflate E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express-session\index.js:371:22
+      1  100.0%          Function: ^<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express-session\index.js:485:38
+      1  100.0%            Function: ^<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\connect-mongo\build\main\lib\MongoStore.js:203:10
+      2    1.2%      LazyCompile: ~configSecureContext node:internal/tls/secure-context:124:29
+      2  100.0%        LazyCompile: ~createSecureContext node:_tls_common:99:29
+      2  100.0%          LazyCompile: ~connect node:_tls_wrap:1600:35
+      2  100.0%            LazyCompile: ~makeConnection E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\cmap\connect.js:248:24
+      2    1.2%      LazyCompile: ~Resolver node:internal/dns/utils:53:14
+      2  100.0%        Function: ~<anonymous> node:internal/dns/utils:1:1
+      2  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      2    1.2%      Function: ^onStreamRead node:internal/stream_base_commons:167:22
+      2    1.2%      Function: ^logger E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\morgan\index.js:103:26
+      1   50.0%        LazyCompile: *trim_prefix E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:293:23
+      1  100.0%          LazyCompile: *next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:177:16
+      1  100.0%            Function: ^<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\connect-flash\lib\flash.js:18:18
+      1   50.0%        Function: ^handle E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%          Function: ^trim_prefix E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:293:23
+      1  100.0%            Function: ^<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:280:64
+      2    1.2%      Function: ^listOnTimeout node:internal/timers:512:25
+      2  100.0%        Function: ^processTimers node:internal/timers:492:25
+      2    1.2%      Function: ^hrtime node:internal/process/per_thread:79:16
+      2  100.0%        Function: ^now E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\utils.js:625:13
+      1   50.0%          Function: ^calculateDurationInMs E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\utils.js:631:31
+      1  100.0%            Function: ^hasTimedOut E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\sessions.js:552:16
+      1   50.0%          Function: ^ServerDescription E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\sdam\server_description.js:34:16
+      1  100.0%            Function: ^<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\sdam\server.js:63:55
+      2    1.2%      Function: ^cpus node:os:133:14
+      1   50.0%        LazyCompile: ~getInfoFromPC file:///E:/Users/Gustavo%20Silva/Desktop/Cursos%20-%20Aprendiendo%20a%20Programar/63-backend-session-passport-eslint-prettier-husky/src/controllers/yargs-controllers.js:7:30
+      1  100.0%          Function: ^handle E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%            LazyCompile: ~next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\route.js:116:16
+      1   50.0%        Function: ^getInfoFromPC file:///E:/Users/Gustavo%20Silva/Desktop/Cursos%20-%20Aprendiendo%20a%20Programar/63-backend-session-passport-eslint-prettier-husky/src/controllers/yargs-controllers.js:7:30
+      1  100.0%          Function: ^handle E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%            Function: ^next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\route.js:116:16
+      2    1.2%      Function: ^cookieParser E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\cookie-parser\index.js:44:32
+      1   50.0%        LazyCompile: *trim_prefix E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:293:23
+      1  100.0%          LazyCompile: *next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:177:16
+      1  100.0%            Function: ^compression E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\compression\index.js:59:31
+      1   50.0%        Function: ^handle E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%          Function: ^trim_prefix E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:293:23
+      1  100.0%            LazyCompile: *next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:177:16
+      2    1.2%      Function: ^compression E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\compression\index.js:59:31
+      1   50.0%        LazyCompile: *trim_prefix E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:293:23
+      1  100.0%          LazyCompile: *next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:177:16
+      1  100.0%            Function: ^jsonParser E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\body-parser\lib\types\json.js:98:30
+      1   50.0%        Function: ^handle E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\layer.js:86:49
+      1  100.0%          Function: ^trim_prefix E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:293:23
+      1  100.0%            LazyCompile: *next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:177:16
+      2    1.2%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2  100.0%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:349:29
+      1   50.0%          Function: ~<anonymous> node:child_process:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      1   50.0%          Function: ~<anonymous> node:_http_client:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:316:27
+      2    1.2%      Function: ^closeSync node:fs:540:19
+      2  100.0%        Function: ^closeSync E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\graceful-fs\graceful-fs.js:72:24
+      2  100.0%          Function: ^readFileSync node:fs:464:22
+      2  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1121:37
+      2    1.2%      Function: ^authenticate E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\passport\lib\middleware\authenticate.js:94:31
+      2  100.0%        LazyCompile: *trim_prefix E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:293:23
+      2  100.0%          LazyCompile: *next E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\express\lib\router\index.js:177:16
+      2  100.0%            Function: ^initialize E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\passport\lib\middleware\initialize.js:51:29
+      4    1.1%    Function: ^measureRoundTripTime E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\sdam\monitor.js:287:30
+      4  100.0%      Function: ^<anonymous> E:\Users\Gustavo Silva\Desktop\Cursos - Aprendiendo a Programar\63-backend-session-passport-eslint-prettier-husky\node_modules\mongodb\lib\sdam\monitor.js:303:58
+      4  100.0%        Function: ^listOnTimeout node:internal/timers:512:25
+      4  100.0%          Function: ^processTimers node:internal/timers:492:25
+      4    1.1%    Function: ^listOnTimeout node:internal/timers:512:25
+      4  100.0%      Function: ^processTimers node:internal/timers:492:25
+
