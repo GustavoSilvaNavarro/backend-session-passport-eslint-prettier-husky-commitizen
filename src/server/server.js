@@ -10,7 +10,7 @@ import { engine } from 'express-handlebars';
 import flash from 'connect-flash';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import morgan from 'morgan';
+// import morgan from 'morgan';
 
 import env from '../utils/variables-env.js';
 import { args } from '../utils/yargs.js';
