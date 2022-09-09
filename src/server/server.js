@@ -23,7 +23,7 @@ const io = new SocketIo(server);
 passportLoginSetupInitialize(passport);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.set('port', parseInt(args.port) || process.env.PORT || 8080);
+app.set('port', process.env.PORT || parseInt(args.port));
 app.set('json spaces', 2);
 app.set('views', path.join(__dirname, '../views'));
 app.engine(
