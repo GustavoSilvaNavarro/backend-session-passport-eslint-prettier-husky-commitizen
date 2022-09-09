@@ -62,7 +62,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 import userRoutes from '../routes/users-routes.js';
 import yargsRoutes from '../routes/yargs-routes.js';
 import { mainErrorHandler, notFoundPageError, globalVariables } from '../middlewares/error-handler.js';
